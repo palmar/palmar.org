@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> — palmar.org</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1 id="three-projects">Three Projects</h1>
+<p>I’m working on three different software projects these days. I’m not
+much of a developer, but I understand distributed systems well. My
+dayjob is a network engineer. I do enjoy software development while I’m
+not under any pressure to deliver. Networking pays the bills,
+programming remains a hobby,</p>
+<p>Recently I’ve made a decision to settle my programming to a narrow
+scope. I’ve written skeletons and variously implemented projects in
+every language under the sun. Go, Powershell, Bash, Python, Rust, C++,
+C, Scheme… just to name a few. My current stance is that I will simply
+learn Rust. I don’t think it’s some holy grail of programming, it just
+happens to fit my profile well. I’m a network engineer so systems
+programming is more interesting than creating pretty user applications,
+and I’m just not smart enough to use C without footgun protection.</p>
+<p>The ascent of LLM assistants and agents has been a blessing to that
+hobby of mine. Real developers will probably have a hard time relating
+to hobbyists, but there is so much friction towards sitting down and
+writing something you enjoy. If you truly are a developer and write code
+every day, it’s not a problem. But every time I sit down I have to
+remember where I stashed my code, how I built it, what the language I
+happen to be writing in expects, what the design is etc.</p>
+<p>But LLM assistants aren’t the solution to everything, and just as
+with any tool there are ways to use their help correctly and
+incorrectly. A hammer is an extremely useful tool that will break your
+fingers if you use it incorrectly.</p>
+<p>I am currently experimenting with development flows with different
+levels of involvement from the models. I’ll give a a brief introduction
+to each.</p>
+<h2 id="port-check.exe">port-check.exe</h2>
+<p>This is the simplest one. I have a very old project written in C#
+that does nothing but attempt to establish a TCP handshake with the
+destination. The entire project is maybe 50 lines of code. What I want
+to do is re-implement it in Rust, and possibly extend it to support
+different types of checks.</p>
+<p>For some context, the reason this exists is that I was annoyed by
+windows people using “telnet” to test port connectivity, and complaining
+when we removed telnet from the servers. This was before the Powershell
+cmdlet “Test-Netconnection” existed.</p>
+<p>This rewrite in Rust will target both linux and windows as platforms,
+and I will do it without any help from Models.</p>
+<h2 id="pl3rtc-palmars-l3-tools---route-controller">pl3rtc (Palmar’s L3
+Tools - Route Controller)</h2>
+<p>This is the most interesting one. I’m writing a route convergence
+tool for linux in Rust. What it does is essentially act as the layer
+between any routing daemon and the linux kernel. The core idea is that
+it maintains a desired state of routes in the kernel and continuously
+monitor netlink to ensure the state is present.</p>
+<p>On the other end it provides a gRPC API to any routing daemon that
+wishes to talk to it. This decoupling of the implementation of a routing
+daemon and the convergence daemon (RIB/FIB) means that experimenting
+with novel routing protocols becomes extremely simple.</p>
+<p>This tool is AI-assisted, in the sense that I will discuss
+architecture and implementation with AI agents, but all design decisions
+and every single line of code is written by the human. The AI may help
+me solve issues in my code, provide reviews and suggest implementation
+and even architectural options.</p>
+<h2 id="ppc-palmars-pocket-calculator---name-under-consideration">PPC
+(Palmar’s Pocket Calculator - name… under consideration)</h2>
+<p>This is my third and largest, in terms of s cope, project. I’m
+building a bare-metal calculator targeting ARM processors. This is
+obviously not just a calculator, as it has some very OS-shaped things to
+it, including the boot process and managing applications.</p>
+<p>It’s the latest project, but I felt right to include it in my current
+portofolio of projects, because it neatly contrasts with the other
+projects. It is an AI-driven project. This means that most of the code
+is written by AI and the human is mostly making architectural and design
+decisions, leaving implementation details to the agent.</p>
+<hr />
+<p>Note how the different projects have different levels of assistance
+from the agents. That is exactly the goal.</p>
+<ul>
+<li>If I want to read documentation, I’ll work on port-check</li>
+<li>If I want to write code, I’ll work on pl3rtc</li>
+<li>If I want to make design decisions, I’ll work on PPC</li>
+</ul>
+<p>To me, software development is a hobby. It doesn’t pay the bills. So
+I need projects for any shape of myself that is available to work on my
+projects that day.</p>
+<hr>
+<p><a href="../index.html">← back</a></p>
+</body>
+</html>
